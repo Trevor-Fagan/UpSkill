@@ -12,6 +12,8 @@ some may be supported by a project.
   <img width="110px" height="150px" src="https://akuity.io/static/argo-header-logo-2da8b7ad32cb8a36d97f570496546fca.png">
   <img width="150px" height="150px" paddingLeft="100px" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg">
   <img width="150px" height="150px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/993px-Postgresql_elephant.svg.png">
+  <img width="200px" height="150px" src="https://miro.medium.com/v2/resize:fit:920/1*CdjOgfolLt_GNJYBzI-1QQ.jpeg">
+  <img width="120px" height="150px" src="https://static-00.iconduck.com/assets.00/react-original-wordmark-icon-840x1024-vhmauxp6.png">
 </p>
 <br />
 The intention behind the way things are written is to make it so someone with no previous knowledge
