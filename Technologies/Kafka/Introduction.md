@@ -83,3 +83,20 @@ after the first one will be assigned to a particular partition and read from tha
 
 A consumer group is a set of consumers that cooperate to consume data from some topics. This is how the above-mentioned
 coordinate and rebalance when consumers are added/removed.
+
+## Kafka Connect
+Kafka connect is a way of getting data from other sources outside of Kafka into Kafka. Connect consists of a client application
+and an ecosystem of plugable connectors. Kafka connect is scalable and fault tolerant, and runs completely independent of the
+main Kafka cluster. One of the main benefits of using Kafka connect is that you are able to abstract away a lot of the code
+and just use simple JSON to configure a connector. A connector is a pluggable software component that is responsible for
+interfacing with the external system.
+
+There are two types of connectors- source connectors and sink connectors. Source connectors act as producers and reads data
+from an external system and publishes to the Kafka cluster. A sink connector consumers from the Kafka cluster and writes
+them to an external system.
+
+## Schema Registry
+A Kafka schema refers to the structure of the data in a message in a topic. The schema registry is an independent process
+that runs outside of the Kafka cluster. It maintains a database of all of the schemas that have been written into topics
+in a cluster. This is beneficial over time so you can keep track of the different structures of data that have changed in
+a topic over time.
