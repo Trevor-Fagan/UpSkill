@@ -70,3 +70,8 @@ func (d deck) print() {
 	
 }
 ```
+
+When you define a receiver function as above, you give any variable of type deck access to the receiver
+function, in this case print. The variable d is the variable of type deck and it acts as if it is being
+passed into the print function that you can then reference from within the function. This is similar to
+how we use this or self in other languages.
