@@ -22,9 +22,25 @@ variable declaration, not when reassigning a variable.
 ## Functions and Return Types
 Basic syntax of a function:
 
-func () return_type {
+```
+func (d deck, handSize int) return_type {
 
 }
+```
+
+You can return more than one item from a function in go using the following syntax
+
+```
+func (d deck, handSize int) (return_type_one, return_type_two) {
+    return d[:handSize], d[handSize:]
+}
+```
+
+You can capture multiple return values from a function by doing something like the following:
+
+```
+first, second := twoReturnTypes()
+```
 
 ## Slices and For Loops
 ### Array
@@ -75,3 +91,12 @@ When you define a receiver function as above, you give any variable of type deck
 function, in this case print. The variable d is the variable of type deck and it acts as if it is being
 passed into the print function that you can then reference from within the function. This is similar to
 how we use this or self in other languages.
+
+## Byte Slices
+Byte slices is a common data structure in Golang that is basically the equivalent of a C string where each
+invidiual character in the string is represented by an ASCII Code.
+
+## Type Conversion
+To do type conversion in Golang, we can do something like the following:
+`[]byte("Hi there")`
+where byte is the type that we want and "Hi there" is what we want to convert.
