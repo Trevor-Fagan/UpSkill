@@ -100,3 +100,23 @@ invidiual character in the string is represented by an ASCII Code.
 To do type conversion in Golang, we can do something like the following:
 `[]byte("Hi there")`
 where byte is the type that we want and "Hi there" is what we want to convert.
+
+## Err type
+If nothing goes wrong, the value stored in err will be of type 'nil'. If something does go wrong,
+the type will be some form of error based on the type of function called. It is common in Go
+to do something like the following:
+
+```
+data, err := ioutil.ReadFile(filename)
+if err != nil {
+    // error handle
+}
+
+// continue on
+```
+
+Using the standard library OS package, you are able to exit a program completely by doing:
+```
+os.Exit(1)
+```
+for an error, or 0 for success (exit codes).
