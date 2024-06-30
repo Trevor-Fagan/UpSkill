@@ -120,3 +120,25 @@ Using the standard library OS package, you are able to exit a program completely
 os.Exit(1)
 ```
 for an error, or 0 for success (exit codes).
+
+## Random Number Generation
+The math/rand package contains many different functions for pseudo-random number generation. One of these
+is: 
+`rand.intN(5)`
+Which takes in a non inclusive max value for a random integer. This pseudo-random number generator is seeded
+and in order to change it, we can do the following:
+```
+source := rand.NewSource()
+r := rand.New(source)
+newPos := r.Intn(len(d))
+```
+We can use current time in order to seed our random number generator.
+
+## Testing in Go
+In order to be able to run tests, we need to first run
+`go mod init`
+to create a new go.mod file in the current directory. This file is used to specify the specific versions of the
+dependencies that you are using in your project. Go tests are *not* like other testing frameworks. Go tests are built
+right into the language and are very different. To create a new test in Go, we just create a new file matching .*_test.go.
+Go will then recognize this as a test file and you can then run all tests using
+`go test`
