@@ -4,3 +4,5 @@
 - Automatic Garbage Collection
 - Compiled language
 - Pass by value language
+- Does *not* support function overloading
+- Does *not* support generic types
