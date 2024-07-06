@@ -1,0 +1,10 @@
+mode: set
+JSON/main.go:16.36,19.16 2 1
+JSON/main.go:19.16,22.3 2 0
+JSON/main.go:24.2,24.28 1 1
+JSON/main.go:27.14,36.16 4 0
+JSON/main.go:36.16,38.3 1 0
+JSON/main.go:38.8,40.3 1 0
+JSON/main.go:42.2,45.16 3 0
+JSON/main.go:45.16,47.3 1 0
+JSON/main.go:47.8,49.3 1 0
