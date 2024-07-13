@@ -3,34 +3,29 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"log"
+	"text/template"
 )
 
 const portNumber = ":3000"
 
 // Home page handler
 func Home(w http.ResponseWriter, r *http.Request) {
-	_, err := fmt.Fprintf(w, "Home")
-
-	if err != nil {
-		log.Printf("Encountered an error: %v", err)
-	}
+	renderTemplate(w, "home.page.html")
 }
 
 // About page handler
 func About(w http.ResponseWriter, r *http.Request) {
-	sum := AddValues(2, 2)
-	_, err := fmt.Fprintf(w, "About")
-	_, _ = fmt.Fprintf(w, fmt.Sprintf("2 + 2 is %d", sum))
-
-	if err != nil {
-		log.Printf("Encountered an error: %v", err)
-	}
+	renderTemplate(w, "about.page.html")
 }
 
-// Add two values together
-func AddValues(x, y int) int {
-	return x + y
+func renderTemplate(w http.ResponseWriter, tmpl string) {
+	parsedTemplate, _ := template.ParseFiles("templates/" + tmpl)
+	err := parsedTemplate.Execute(w, nil)
+
+	if err != nil {
+		fmt.Println("error parsing tempalte: ", err)
+		return
+	}
 }
 
 func main(){
