@@ -17,3 +17,22 @@ over the users and comments table and matches on user_id.
 - There are multiple types of joins
 
 ## Four Kinds of Joins
+### Inner Join 
+The default type of join when you use the join keyword. You can also specify that you want to do the inner join
+by doing `INNER JOIN`. When items do not line up in both tables, they are dropped from the resulting set. So, in this:
+```
+SELECT url, username FROM photos JOIN users ON users.id = photos.user_id;
+```
+You would only get rows that match exactly between the tables (think AND)
+
+### Left Outer Join
+You can specify by using the `LEFT JOIN` keywords. So as in the above example, anything from the photos table that
+does not match up to the users table, we do not drop the item in the photos table. Instead, the data that would be
+matching up with the users table would be filled with NULL.
+
+### Right Outer Join
+Same as left outer join, just for the rightmost table.
+`RIGHT JOIN`
+
+### Full Join
+Match everything that you can, and anything else will be added with the values of just being NULL.
