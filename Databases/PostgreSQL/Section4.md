@@ -36,3 +36,9 @@ Same as left outer join, just for the rightmost table.
 
 ### Full Join
 Match everything that you can, and anything else will be added with the values of just being NULL.
+
+## Using WHERE with join
+`SELECT url, contents FROM comments JOIN photos ON comments.photo_id = photos.id WHERE comments.user_id = photos.user_id;`
+
+## Three Way Joins
+`SELECT url, contents, username FROM comments JOIN photos ON comments.photo_id = photos.id JOIN users ON users.id = comments.user_id AND users.id = photos.user_id`
