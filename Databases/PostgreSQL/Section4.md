@@ -42,3 +42,6 @@ Match everything that you can, and anything else will be added with the values o
 
 ## Three Way Joins
 `SELECT url, contents, username FROM comments JOIN photos ON comments.photo_id = photos.id JOIN users ON users.id = comments.user_id AND users.id = photos.user_id`
+
+## Having
+Allows you to filter a set of groups- always used with GROUP BY.
