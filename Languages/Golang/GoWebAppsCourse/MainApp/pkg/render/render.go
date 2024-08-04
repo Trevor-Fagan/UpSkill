@@ -1,6 +1,7 @@
 package render
 
 import (
+	"MainApp/pkg/config"
 	"bytes"
 	"log"
 	"net/http"
@@ -8,22 +9,26 @@ import (
 	"text/template"
 )
 
+var app *config.AppConfig
+
+// set the config for the template package
+func NewTemplates(a *config.AppConfig) {
+	app = a
+}
+
 // Render HTML templates
 func RenderTemplate(w http.ResponseWriter, tmpl string) {
 	// get the template cache from the app config
-	tc, err := CreateTemplateCache()
-	if err != nil {
-		log.Fatal(err)
-	}
+	tc := app.TemplateCache
 
 	// get requested template from cache
 	t, ok := tc[tmpl]
 	if !ok {
-		log.Fatal(err)
+		log.Fatal("Could not get tempalte from template cache")
 	}
 
 	buf := new(bytes.Buffer)
-	err = t.Execute(buf, nil)
+	err := t.Execute(buf, nil)
 
 	if err != nil {
 		log.Println(err)
