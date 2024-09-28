@@ -1,3 +1,5 @@
 .env
 /Technologies/Kafka/Python\ Kafka\ Project/config.ini
 /Technologies/Kafka/Python\ Kafka\ Project/env
+venv
+env
