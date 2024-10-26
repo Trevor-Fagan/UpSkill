@@ -30,17 +30,7 @@ func main() {
 
 		queryString := "http://api.weatherstack.com/current?access_key=" + os.Getenv("API_KEY") + "&query=" + location + "&units=f"
 		weatherResp := getWeather(queryString)
-
-		var result map[string]interface{}
-		_ = json.Unmarshal([]byte(weatherResp), &result)
-
-		if resultLocation, ok := result["location"].(map[string]interface{}); ok {
-			fmt.Println(resultLocation["name"])
-		}
-
-		if current, ok := result["current"].(map[string]interface{}); ok {
-			fmt.Printf("Temperature: %f F\n", current["temperature"])
-		}
+		outputWeather(weatherResp)
 	}
 }
 
@@ -56,4 +46,17 @@ func getWeather(queryString string) []byte {
 	}
 
 	return bodyBytes
+}
+
+func outputWeather(weatherResp []byte) {
+	var result map[string]interface{}
+	_ = json.Unmarshal([]byte(weatherResp), &result)
+
+	if resultLocation, ok := result["location"].(map[string]interface{}); ok {
+		fmt.Println(resultLocation["name"])
+	}
+
+	if current, ok := result["current"].(map[string]interface{}); ok {
+		fmt.Printf("Temperature: %f F\n", current["temperature"])
+	}
 }
